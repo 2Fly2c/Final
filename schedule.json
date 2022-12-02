@@ -1,0 +1,658 @@
+{
+    "under6": [
+        { 
+            "team_name": "Ferndale1B",
+            "team_number": 1,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "sep24",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct1",
+                    "time": "1:00",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct8",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct15",
+                    "time": "1:00",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct22",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct29",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "nov5",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                }
+            ]
+        },
+        { 
+            "team_name": "Northside1B",
+            "team_number": 2,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "10:30",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "sep24",
+                    "time": "1:00",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct1",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct8",
+                    "time": "1:00",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct15",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct22",
+                    "time": "1:00",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct29",
+                    "time": "10:30",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "nov5",
+                    "time": "1:00",
+                    "home_field": "27",
+                    "away_field": "22"
+                }
+            ]
+        },
+        { 
+            "team_name": "Lakeside1B",
+            "team_number": 3,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "1:00",
+                    "home_field": "25",
+                    "away_field": "24"
+                },
+                {
+                    "date": "sep24",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct1",
+                    "time": "10:30",
+                    "home_field": "25",
+                    "away_field": "24"
+                },
+                {
+                    "date": "oct8",
+                    "time": "1:00",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct15",
+                    "time": "1:00",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct22",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct29",
+                    "time": "1:00",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "nov5",
+                    "time": "10:30",
+                    "home_field": "23",
+                    "away_field": "26"
+                }
+            ]
+        },
+        { 
+            "team_name": "Blaine1B",
+            "team_number": 4,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "1:00",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "sep24",
+                    "time": "10:30",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct1",
+                    "time": "1:00",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct8",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct15",
+                    "time": "1:00",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct22",
+                    "time": "10:30",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct29",
+                    "time": "10:30",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "nov5",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                }
+            ]
+        },
+        { 
+            "team_name": "Lynden1G",
+            "team_number": 5,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "11:45",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "sep24",
+                    "time": "2:15",
+                    "home_field": "27",
+                    "away_field": "22"
+                },
+                {
+                    "date": "oct1",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct8",
+                    "time": "11:45",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct15",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct22",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct29",
+                    "time": "2:15",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                }       
+        
+            ]
+        },
+        { 
+            "team_name": "Ferndale1G",
+            "team_number": 6,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "sep24",
+                    "time": "11:45",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct1",
+                    "time": "2:15",
+                    "home_field": "27",
+                    "away_field": "22"
+                },
+                {
+                    "date": "oct8",
+                    "time": "2:15",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct15",
+                    "time": "11:45",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct22",
+                    "time": "11:45",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct29",
+                    "time": "11:45",
+                    "home_field": "24",
+                    "away_field": "24"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "27",
+                    "away_field": "22"
+                }
+            ]
+        },
+        { 
+            "team_name": "MtBaker1G",
+            "team_number": 7,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "sep24",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct1",
+                    "time": "11:45",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct8",
+                    "time": "11:45",
+                    "home_field": "27",
+                    "away_field": "22"
+                },
+                {
+                    "date": "oct15",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct22",
+                    "time": "11:45",
+                    "home_field": "24",
+                    "away_field": "24"
+                },
+                {
+                    "date": "oct29",
+                    "time": "11:45",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "27",
+                    "away_field": "22"
+                }
+            ]
+        },
+        { 
+            "team_name": "Nooksack1G",
+            "team_number": 8,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "sep24",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct1",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct8",
+                    "time": "2:15",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct15",
+                    "time": "11:45",
+                    "home_field": "24",
+                    "away_field": "24"
+                },
+                {
+                    "date": "oct22",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct29",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "23",
+                    "away_field": "26"
+                }
+            ]
+        }
+    ],
+    "under7" : [
+        { 
+            "team_name": "Southside3B",
+            "team_number": 1,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                },
+                {
+                    "date": "sep24",
+                    "time": "9:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                },
+                {
+                    "date": "oct1",
+                    "time": "11:45",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "oct8",
+                    "time": "9:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "oct15",
+                    "time": "2:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "oct22",
+                    "time": "9:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct29",
+                    "time": "2:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                }
+            ]
+        },
+        { 
+            "team_name": "MtBaker1B",
+            "team_number": 2,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "sep24",
+                    "time": "2:15",
+                    "home_field": "21",
+                    "away_field": "16"
+                },
+                {
+                    "date": "oct1",
+                    "time": "11:45",
+                    "home_field": "19",
+                    "away_field": "18"
+                },
+                {
+                    "date": "oct8",
+                    "time": "9:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct15",
+                    "time": "11:45",
+                    "home_field": "18",
+                    "away_field": "29"
+                },
+                {
+                    "date": "oct22",
+                    "time": "2:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct29",
+                    "time": "9:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "21",
+                    "away_field": "16"
+                }
+            ]
+        },
+        { 
+            "team_name": "Nooksack1B",
+            "team_number": 3,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "21",
+                    "away_field": "16"
+                },
+                {
+                    "date": "sep24",
+                    "time": "9:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct1",
+                    "time": "2:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                },
+                {
+                    "date": "oct8",
+                    "time": "2:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct15",
+                    "time": "2:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct22",
+                    "time": "9:45",
+                    "home_field": "21",
+                    "away_field": "16"
+                },
+                {
+                    "date": "oct29",
+                    "time": "11:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "nov5",
+                    "time": "2:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                }
+            ]
+        },
+        { 
+            "team_name": "Lynden1B",
+            "team_number": 4,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "18",
+                    "away_field": "18"
+                },
+                {
+                    "date": "sep24",
+                    "time": "11:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct1",
+                    "time": "9:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "oct8",
+                    "time": "9:15",
+                    "home_field": "21",
+                    "away_field": "16"
+                },
+                {
+                    "date": "oct15",
+                    "time": "9:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                },
+                {
+                    "date": "oct22",
+                    "time": "2:15",
+                    "home_field": "18",
+                    "away_field": "18"
+                },
+                {
+                    "date": "oct29",
+                    "time": "11:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "nov5",
+                    "time": "9:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                }
+            ]
+        }
+    
+    ]
+        
+    
+}

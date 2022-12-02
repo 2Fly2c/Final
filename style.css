@@ -1,0 +1,539 @@
+body {
+  background-image: url("Phillips2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.navbar {
+	margin-bottom: 20px;
+	position:relative;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+	justify-content:space-between;
+	padding-top:.5rem;
+	padding-bottom:.5rem;
+	box-shadow: 0px 10px 5px rgba(46, 45, 51, 0.767);
+	background-color: #171f1b;
+	z-index: 10;
+}
+.navbar-expand-md{
+	flex-wrap:nowrap;
+	justify-content:flex-start;
+}
+
+
+.navbar-toggler{
+	right: 20px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+.navbar-brand{
+	margin: auto;
+	text-align:center;
+	font-size: 60px;
+	font-style: italic;
+	font-family: 'Inter';
+	display: flex;
+	align-items: center;
+	color: #FFFFFF;
+	line-height: 90px;
+}
+
+#instructionbox{
+	box-sizing: border-box;
+	float: left;
+	width: 432px;
+	height: 735px;
+	background: #E6E3FF;
+	border: 5px solid #F8D0AB;
+	border-radius: 30px;
+}
+
+#whatcom-logo{
+	background-image: url("WCYSALogo.png");
+	float: left;
+	height: 115px;
+	width: 88px;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+#whatcom-logo:hover{
+	cursor: pointer;
+}
+
+.floatingcontainer{
+	position: absolute;
+	top: 0%;
+	left: 10%;
+	width: 80%;
+	height: 100%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	padding-left: 5%;
+	padding-right: 5%;
+	z-index: 9;
+	background: #96aa99;
+	box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.603), -5px 5px 4px rgba(0, 0, 0, 0.603);
+	border-radius: 0px;
+	display: block;
+}
+
+#welcomebox{
+	position: relative;
+	width: 80%;
+	height: 20%;
+	top: 0;
+	left: 10%;
+	background: #BFF3C9;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 25px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 10px;
+
+}
+.toolboxwrapper{
+	position: relative;
+	width: 20%;
+	height: 60%;
+	float: left;
+	background: white;
+	margin-right: 5%;
+	margin-top: 5%;
+	border-radius: 10px;
+	background-color: #1c3117;
+}
+
+.toolboxcaption {
+	position: relative;
+	margin-top: 50%;
+	margin-left: 10%;
+	width: 80%;
+	height: 50%;
+	background: #BFF3C9;
+	z-index: 20;
+	border-radius: 10px;
+	padding-top: 10%;
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: center;
+}
+
+.toolboxbutton{
+	background-color:#f3560d;
+	border: none;
+	color: white;
+	width: 80%;
+	height: 25%;
+	text-align: center;
+	padding-top: 9%;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	border: 0px;
+	border-radius: 5px;
+	margin: 0;
+	transform: translate(-50%, -50%);
+}
+
+.toolboxbutton:hover{
+	color: white;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	border: 2px solid;
+	border-color: white;
+	background-color: #f3560d;
+}
+
+
+.nav-item{
+	text-align: right;
+}
+
+#inputwrapper{
+	display: block;
+}
+
+#dateselectorhide{
+	display: none;
+}
+
+#teamselectorhide{
+	display: none;
+}
+
+
+#inputgobutton{
+	background-color:#f3560d;
+	border: none;
+	color: white;
+	width: 10%;
+	height: 10%;
+	text-align: center;
+	padding-top: 20px;
+	text-decoration: none;
+	font-size: 20px;
+	position: relative;
+	left: 20%;
+	top: 40%;
+	border: 0px;
+	border-radius: 5px;
+	margin: 0;
+	transform: translate(-50%, -50%);
+	display: none;
+}
+
+#inputgobutton:hover{
+	color: white;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	border: 2px solid;
+	border-color: white;
+	background-color: #f3560d;
+}
+
+#inputresetbutton{
+	background-color:#f3560d;
+	border: none;
+	color: white;
+	width: 10%;
+	height: 10%;
+	text-align: center;
+	padding-top: 20px;
+	text-decoration: none;
+	font-size: 20px;
+	position: relative;
+	left: 10%;
+	top: 40%;
+	border: 0px;
+	border-radius: 5px;
+	margin: 0;
+	transform: translate(-50%, -50%);
+	display: none;
+}
+#inputresetbutton:hover{
+	color: white;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	border: 2px solid;
+	border-color: white;
+	background-color: #f3560d;
+}
+
+#keyWrapper {
+	position: absolute;
+	width: 40%;
+	height: 60%;
+	float: left;
+	background: white;
+	margin-right: 5%;
+	margin-top: 5%;
+	border-radius: 10px;
+	background-color: #1c3117;
+	box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.603);
+}
+
+.exampleField {
+	background-color: rgb(255, 255, 255);
+	height: 125px;
+	width: 85px;  
+	border: 3px solid rgb(0, 0, 0);
+	padding: 0px;
+	float: left;
+	margin-left: 5%;
+	margin-top: 15%;
+}
+
+#exampleAway1 {
+	border-bottom: 3px solid black;
+	width: 79px;
+	height: 61px;
+	padding: 0px;
+	background: red;
+	position: relative;
+
+}
+#exampleAway2 {
+	border-bottom: 3px solid black;
+	width: 79px;
+	height: 61px;
+	padding: 0px;
+	background: lightCoral;
+	position: relative;
+
+}
+
+#exampleAwayEmpty {
+	border-bottom: 3px solid black;
+	width: 79px;
+	height: 61px;
+	padding: 0px;
+	background: rgb(255, 255, 255);
+	position: relative;
+
+}
+
+#exampleHome {
+	width: 79px;
+	height: 58px;
+	padding: 0px;
+	background: blue;
+	position: relative;
+
+}
+
+#exampleHomeEmpty {
+	width: 79px;
+	height: 58px;
+	padding: 0px;
+	background: rgb(255, 255, 255);
+	position: relative;
+
+}
+
+#returnbutton {
+	background-color: #f3560d;
+	border: none;
+	color: white;
+	width: 30%;
+	height: 10%;
+	text-align: center;
+	padding-top: 5px;
+	text-decoration: none;
+	font-size: 20px;
+	position: relative;
+	left: 0%;
+	top: 90%;
+	border: 0px;
+	border-radius: 5px;
+	margin: 0;
+	transform: translate(-50%, -50%);
+	display: block;
+}
+
+#returnbutton:hover {
+	color: white;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	border: 2px solid;
+	border-color: white;
+	background-color: #f3560d;
+}
+
+#displayTime{
+	position: absolute;
+	left: 63%;
+	top: 16%;
+	z-index: 40;
+
+	font-size: 40px;
+	font-weight: bold;
+	color: black;
+}
+
+.fieldlabelu7{
+	font-size: 30px;
+	padding: 0px;
+	position: relative;
+	top: -50%;
+	text-align: center;
+	display: none;
+}
+
+.away {
+	border-bottom: 3px solid black;
+	width: 79px;
+	height: 61px;
+	padding: 0px;
+	background: rgb(255, 255, 255);
+	position: relative;
+	top: -37.5%;
+}
+
+.home {
+	width: 79px;
+	height: 58px;
+	padding: 0px;
+	background: rgb(255, 255, 255);
+	position: relative;
+	top: -37.5%;
+}
+
+.fieldlabelu6{
+	font-size: 30px;
+	padding: 0px;
+	position: relative;
+	top: -50%;
+	text-align: center;
+	display: block;
+}
+
+#fieldcontainer1{
+	background-color: rgb(255, 255, 255);
+	height: 125px;
+	width: 85px;
+	border: 3px solid rgb(0, 0, 0);
+	padding: 0px;
+	position: absolute;
+	left: 80%;
+	top: 50%;
+}
+
+
+
+
+#arrow1 {
+	border: solid black;
+	border-width: 0 5px 5px 0;
+	display: inline-block;
+	padding: 10px;
+	transform: rotate(135deg);
+	position: absolute;
+	top: 55.5%;
+	left: 78%;
+}
+
+
+#fieldcontainer2{
+	background-color: rgb(255, 255, 255);
+	height: 125px;
+	width: 85px;
+	border: 3px solid rgb(0, 0, 0);
+	padding: 0px;
+	position: absolute;
+	left: 70%;
+	top: 50%;
+}
+
+
+
+
+#arrow2 {
+	border: solid black;
+	border-width: 0 5px 5px 0;
+	display: inline-block;
+	padding: 10px;
+	transform: rotate(135deg);
+	position: absolute;
+	top: 55.5%;
+	left: 68%;
+}
+
+#fieldcontainer3{
+	background-color: rgb(255, 255, 255);
+	height: 125px;
+	width: 85px;
+	border: 3px solid rgb(0, 0, 0);
+	padding: 0px;
+	position: absolute;
+	left: 60%;
+	top: 50%;
+}
+
+
+
+
+#arrow3 {
+	border: solid black;
+	border-width: 0 5px 5px 0;
+	display: inline-block;
+	padding: 10px;
+	transform: rotate(-135deg);
+	position: absolute;
+	top: 47%;
+	left: 57%;
+}
+
+
+#fieldcontainer4{
+	background-color: rgb(255, 255, 255);
+	height: 125px;
+	width: 85px;
+	border: 3px solid rgb(0, 0, 0);
+	padding: 0px;
+	position: absolute;
+	left: 60%;
+	top: 30%;
+}
+
+
+
+#arrow4 {
+	border: solid black;
+	border-width: 0 5px 5px 0;
+	display: inline-block;
+	padding: 10px;
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 36%;
+	left: 65%;
+}
+
+#fieldcontainer5{
+	background-color: rgb(255, 255, 255);
+	height: 125px;
+	width: 85px;
+	border: 3px solid rgb(0, 0, 0);
+	padding: 0px;
+	position: absolute;
+	left: 70%;
+	top: 30%;
+}
+
+
+
+#arrow5 {
+	border: solid black;
+	border-width: 0 5px 5px 0;
+	display: inline-block;
+	padding: 10px;
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 36%;
+	left: 75%;
+}
+
+#fieldcontainer6{
+	background-color: rgb(255, 255, 255);
+	height: 125px;
+	width: 85px;
+	border: 3px solid rgb(0, 0, 0);
+	padding: 0px;
+	position: absolute;
+	left: 80%;
+	top: 30%;
+}
+
+
+
+#arrow6 {
+	border: solid black;
+	border-width: 0 5px 5px 0;
+	display: inline-block;
+	padding: 10px;
+	transform: rotate(45deg);
+	position: absolute;
+	top: 44%;
+	left: 85.5%;
+}
+
+
+#fieldhideyhole{
+	display: none;
+}
+

@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href ="style.css" rel= "stylesheet">
+
+        
+        <title>Rotation Visualizer</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-dark mb-4">
+            <div class="container-fluid">
+                <a href="https://whatcomsoccer.com/youth-soccer/" id="whatcom-logo" ></a>
+
+                <a class="navbar-brand" href="index.html">MicroMaster Assistant</a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://whatcomsoccer.com/youth-soccer/">Whatcom Soccer Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://dt5602vnjxv0c.cloudfront.net/portals/51285/docs/field%20map.pdf">Phillips 66 Field Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.cityofferndale.org/public-works-department/parks-and-recreation/parks/parks-facility-rentals/phillips66-sports-complex/">Phillips 66 Field Rules</a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">U6/U7 Jamboree Rules</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="inputwrapper">
+        <div class="floatingcontainer">
+
+            <div id="inputBorder">
+                <label for="ageselector">Chooose an Age</label>
+                <select name="ageselector" id="ageselector">
+                    <option value="null"></option>
+                    <option value="under6">Under 6</option>
+                    <option value="under7">Under 7</option>
+                </select>
+                <br>
+                
+                <div id="teamselectorhide">
+                    <label for="teamselector"> Choose a Team</label>
+                    <select name="teamselector" id="teamselector">
+                        <option value="null"></option>
+                    </select>
+                </div>
+
+                <div id="dateselectorhide">
+                    <label for="dateselector">Choose a Date</label>
+                    <select name="dateselector" id="dateselector">
+                        <option value="null"></option>
+                        <option value="sep17">September 17th</option>
+                        <option value="sep24">September 24th</option>
+                        <option value="oct1">October 1st</option>
+                        <option value="oct8">October 8th</option>
+                        <option value="oct15">October 15th</option>
+                        <option value="oct22">October 22nd</option>
+                        <option value="oct29">October 29th</option>
+                        <option value="nov5">November 5th</option>
+                    </select>
+                    <br>
+                </div>
+            </div>
+
+
+            <button id="inputgobutton" onclick="inputgoclick()">Go!</button>
+            <button id="inputresetbutton" onclick="resetInput()">Reset Fields</button>
+            
+            
+        </div>
+
+        </div>
+
+        <div id="fieldhideyhole">
+
+
+            <div id="displayTime">
+                test
+            </div>
+
+            <div id="keyWrapper">
+                <div class="exampleField">
+                    <div id="exampleAwayEmpty"></div>
+                    <div id="exampleHome"></div>
+                </div>
+                <div class="exampleField">
+                    <div id="exampleAway1"></div>
+                    <div id="exampleHomeEmpty"></div>
+                </div>
+                <div class="exampleField">
+                    <div id="exampleAway2"></div>
+                    <div id="exampleHomeEmpty"></div>
+                </div>
+
+                <button id="returnbutton" onclick="returnclick()">Go Back</button>
+            </div>
+
+            <div id="fieldcontainer1">
+                <div class="fieldlabelu7">16</div>
+                <div class="fieldlabelu6">22</div>
+                <div class="away"></div>
+                <div class="home"></div>
+            </div>
+    
+            <div id="arrow1"></div>
+    
+    
+            <div id="fieldcontainer2">
+                <div class="fieldlabelu7">17</div>
+                <div class="fieldlabelu6">23</div>
+                <div class="away"></div>
+                <div class="home"></div>
+            </div>
+    
+            <div id="arrow2"></div>
+    
+            <div id="fieldcontainer3">
+                <div class="fieldlabelu7">18</div>
+                <div class="fieldlabelu6">24</div>
+                <div class="away"></div>
+                <div class="home"></div>
+            </div>
+    
+            <div id="arrow3"></div>
+    
+            <div id="fieldcontainer4">
+                <div class="fieldlabelu7">19</div>
+                <div class="fieldlabelu6">25</div>
+                <div class="away"></div>
+                <div class="home"></div>
+            </div>
+    
+            <div id="arrow4"></div>
+    
+            <div id="fieldcontainer5">
+                <div class="fieldlabelu7">20</div>
+                <div class="fieldlabelu6">26</div>
+                <div class="away"></div>
+                <div class="home"></div>
+            </div>
+    
+            <div id="arrow5"></div>
+            
+            <div id="fieldcontainer6">
+                <div class="fieldlabelu7">21</div>
+                <div class="fieldlabelu6">27</div>
+                <div class="away"></div>
+                <div class="home"></div>
+            </div>
+    
+            <div id="arrow6"></div>
+    
+
+        </div>
+
+
+        
+        <script src="bootstrap.bundle.min.js"></script>
+        <script>
+            var ageGlobal;
+            var teamGlobal;
+            var dateGlobal;
+            var homeField;
+            var awayField;
+            var startTime;
+            var targetTeam;
+            var jsonSchedule = {
+            "under6": [
+            { 
+            "team_name": "Ferndale1B",
+            "team_number": 1,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "sep24",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct1",
+                    "time": "1:00",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct8",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct15",
+                    "time": "1:00",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct22",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct29",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "nov5",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                }
+            ]
+        },
+        { 
+            "team_name": "Northside1B",
+            "team_number": 2,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "10:30",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "sep24",
+                    "time": "1:00",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct1",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct8",
+                    "time": "1:00",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct15",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct22",
+                    "time": "1:00",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct29",
+                    "time": "10:30",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "nov5",
+                    "time": "1:00",
+                    "home_field": "27",
+                    "away_field": "22"
+                }
+            ]
+        },
+        { 
+            "team_name": "Lakeside1B",
+            "team_number": 3,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "1:00",
+                    "home_field": "25",
+                    "away_field": "24"
+                },
+                {
+                    "date": "sep24",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct1",
+                    "time": "10:30",
+                    "home_field": "25",
+                    "away_field": "24"
+                },
+                {
+                    "date": "oct8",
+                    "time": "1:00",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct15",
+                    "time": "1:00",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct22",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct29",
+                    "time": "1:00",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "nov5",
+                    "time": "10:30",
+                    "home_field": "23",
+                    "away_field": "26"
+                }
+            ]
+        },
+        { 
+            "team_name": "Blaine1B",
+            "team_number": 4,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "1:00",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "sep24",
+                    "time": "10:30",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct1",
+                    "time": "1:00",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct8",
+                    "time": "10:30",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct15",
+                    "time": "1:00",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct22",
+                    "time": "10:30",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "oct29",
+                    "time": "10:30",
+                    "home_field": "24",
+                    "away_field": "25"
+                },
+                {
+                    "date": "nov5",
+                    "time": "10:30",
+                    "home_field": "26",
+                    "away_field": "23"
+                }
+            ]
+        },
+        { 
+            "team_name": "Lynden1G",
+            "team_number": 5,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "11:45",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "sep24",
+                    "time": "2:15",
+                    "home_field": "27",
+                    "away_field": "22"
+                },
+                {
+                    "date": "oct1",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct8",
+                    "time": "11:45",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct15",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct22",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct29",
+                    "time": "2:15",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                }       
+        
+            ]
+        },
+        { 
+            "team_name": "Ferndale1G",
+            "team_number": 6,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "sep24",
+                    "time": "11:45",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct1",
+                    "time": "2:15",
+                    "home_field": "27",
+                    "away_field": "22"
+                },
+                {
+                    "date": "oct8",
+                    "time": "2:15",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct15",
+                    "time": "11:45",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct22",
+                    "time": "11:45",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct29",
+                    "time": "11:45",
+                    "home_field": "24",
+                    "away_field": "24"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "27",
+                    "away_field": "22"
+                }
+            ]
+        },
+        { 
+            "team_name": "MtBaker1G",
+            "team_number": 7,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "sep24",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct1",
+                    "time": "11:45",
+                    "home_field": "26",
+                    "away_field": "23"
+                },
+                {
+                    "date": "oct8",
+                    "time": "11:45",
+                    "home_field": "27",
+                    "away_field": "22"
+                },
+                {
+                    "date": "oct15",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct22",
+                    "time": "11:45",
+                    "home_field": "24",
+                    "away_field": "24"
+                },
+                {
+                    "date": "oct29",
+                    "time": "11:45",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "27",
+                    "away_field": "22"
+                }
+            ]
+        },
+        { 
+            "team_name": "Nooksack1G",
+            "team_number": 8,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "sep24",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct1",
+                    "time": "11:45",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct8",
+                    "time": "2:15",
+                    "home_field": "22",
+                    "away_field": "27"
+                },
+                {
+                    "date": "oct15",
+                    "time": "11:45",
+                    "home_field": "24",
+                    "away_field": "24"
+                },
+                {
+                    "date": "oct22",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "oct29",
+                    "time": "2:15",
+                    "home_field": "23",
+                    "away_field": "26"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "23",
+                    "away_field": "26"
+                }
+            ]
+        }
+    ],
+    "under7" : [
+        { 
+            "team_name": "Southside3B",
+            "team_number": 1,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                },
+                {
+                    "date": "sep24",
+                    "time": "9:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                },
+                {
+                    "date": "oct1",
+                    "time": "11:45",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "oct8",
+                    "time": "9:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "oct15",
+                    "time": "2:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "oct22",
+                    "time": "9:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct29",
+                    "time": "2:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                }
+            ]
+        },
+        { 
+            "team_name": "MtBaker1B",
+            "team_number": 2,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "sep24",
+                    "time": "2:15",
+                    "home_field": "21",
+                    "away_field": "16"
+                },
+                {
+                    "date": "oct1",
+                    "time": "11:45",
+                    "home_field": "19",
+                    "away_field": "18"
+                },
+                {
+                    "date": "oct8",
+                    "time": "9:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct15",
+                    "time": "11:45",
+                    "home_field": "18",
+                    "away_field": "29"
+                },
+                {
+                    "date": "oct22",
+                    "time": "2:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct29",
+                    "time": "9:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "nov5",
+                    "time": "11:45",
+                    "home_field": "21",
+                    "away_field": "16"
+                }
+            ]
+        },
+        { 
+            "team_name": "Nooksack1B",
+            "team_number": 3,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "21",
+                    "away_field": "16"
+                },
+                {
+                    "date": "sep24",
+                    "time": "9:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct1",
+                    "time": "2:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                },
+                {
+                    "date": "oct8",
+                    "time": "2:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct15",
+                    "time": "2:15",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct22",
+                    "time": "9:45",
+                    "home_field": "21",
+                    "away_field": "16"
+                },
+                {
+                    "date": "oct29",
+                    "time": "11:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "nov5",
+                    "time": "2:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                }
+            ]
+        },
+        { 
+            "team_name": "Lynden1B",
+            "team_number": 4,
+            "games": [
+                {
+                    "date": "sep17",
+                    "time": "2:15",
+                    "home_field": "18",
+                    "away_field": "18"
+                },
+                {
+                    "date": "sep24",
+                    "time": "11:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "oct1",
+                    "time": "9:15",
+                    "home_field": "17",
+                    "away_field": "20"
+                },
+                {
+                    "date": "oct8",
+                    "time": "9:15",
+                    "home_field": "21",
+                    "away_field": "16"
+                },
+                {
+                    "date": "oct15",
+                    "time": "9:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                },
+                {
+                    "date": "oct22",
+                    "time": "2:15",
+                    "home_field": "18",
+                    "away_field": "18"
+                },
+                {
+                    "date": "oct29",
+                    "time": "11:45",
+                    "home_field": "16",
+                    "away_field": "21"
+                },
+                {
+                    "date": "nov5",
+                    "time": "9:15",
+                    "home_field": "20",
+                    "away_field": "17"
+                }
+            ]
+        }
+    
+    ]
+        
+    
+}
+
+            document.getElementById("ageselector").onchange = changelistenerage;
+
+            function changelistenerage() {
+                var age = this.value;
+                if (age == "under6"){
+                    document.getElementById("teamselectorhide").style.display ="block";
+                    ageGlobal = age;
+
+                    var u6TeamSelect = document.getElementById("teamselector");
+                    var teamsUnderSix = jsonSchedule["under6"];
+
+                    u6TeamSelect.options.length = 1;
+                    
+                    for (team in teamsUnderSix){
+                        u6TeamSelect.options[u6TeamSelect.options.length] = new Option (teamsUnderSix[team].team_name);
+                    }
+
+
+                }else if(age =="under7"){
+                    document.getElementById("teamselectorhide").style.display ="block";
+                    ageGlobal = age;
+
+                    var u7TeamSelect = document.getElementById("teamselector");
+                    var teamsUnderSeven = jsonSchedule["under7"];
+
+                    u7TeamSelect.options.length = 1;
+                    
+                    for (team in teamsUnderSeven){
+                        u7TeamSelect.options[u7TeamSelect.options.length] = new Option (teamsUnderSeven[team].team_name);
+                    }
+                    if (ageGlobal == "under7"){
+                }
+                }else if(age =="null"){
+                    document.getElementById("teamselectorhide").style.display ="none";
+                }
+                
+            }
+
+            document.getElementById("teamselector").onchange= changelistenerteam;
+
+            function changelistenerteam() {
+                var team = this.value;
+
+                if(team !="null"){
+                    document.getElementById("dateselectorhide").style.display ="block";
+                    teamGlobal = team;
+                } else {
+                    document.getElementById("dateselectorhide").style.display ="none";
+                }
+               
+            }
+
+            document.getElementById("dateselector").onchange = changelistenerdate;
+
+            function changelistenerdate() {
+                var date = this.value;
+                if (date == "null"){
+                    document.getElementById("inputgobutton").style.display = "none";
+                } else {
+                    document.getElementById("inputgobutton").style.display = "block";
+                    document.getElementById("inputresetbutton").style.display = "block";
+                    dateGlobal = date;
+                }
+
+            }
+
+            function inputgoclick() {
+                document.getElementById("inputwrapper").style.display = "none";
+                document.getElementById("fieldhideyhole").style.display = "block";
+                const fieldDaddy = document.getElementById ("fieldhideyhole");
+                
+                if (ageGlobal == "under6") {
+                    var teamsUnderSix = jsonSchedule["under6"];
+
+                    
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[0].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[1].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[2].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[3].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[4].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[5].style.display = "none";
+
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[0].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[1].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[2].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[3].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[4].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[5].style.display = "block";
+
+                    for (team in teamsUnderSix){
+                        if (teamsUnderSix[team].team_name == teamGlobal){
+                            
+                            targetTeam = jsonSchedule.under6[team].games;
+
+                            console.log(targetTeam);
+
+                            for (game in targetTeam){
+                                if(targetTeam[game].date == dateGlobal){
+                                    console.log("success");
+                                    homeField = jsonSchedule.under6[team].games[game].away_field;
+                                    awayField = jsonSchedule.under6[team].games[game].home_field;
+                                    startTime = jsonSchedule.under6[team].games[game].time;
+                                }
+                            }
+                        }
+                    }
+                } else if (ageGlobal == "under7") {
+                    var teamsUnderSeven = jsonSchedule["under7"];
+
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[0].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[1].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[2].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[3].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[4].style.display = "none";
+                    fieldDaddy.getElementsByClassName("fieldlabelu6")[5].style.display = "none";
+
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[0].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[1].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[2].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[3].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[4].style.display = "block";
+                    fieldDaddy.getElementsByClassName("fieldlabelu7")[5].style.display = "block";
+
+                    for (team in teamsUnderSeven){
+                        if (teamsUnderSeven[team].team_name == teamGlobal){
+                            
+                            targetTeam = jsonSchedule.under7[team].games;
+
+                            console.log(targetTeam);
+
+                            for (game in targetTeam){
+                                if(targetTeam[game].date == dateGlobal){
+                                    console.log("success");
+                                    homeField = jsonSchedule.under7[team].games[game].away_field;
+                                    awayField = jsonSchedule.under7[team].games[game].home_field;
+                                    startTime = jsonSchedule.under7[team].games[game].time;
+                                    console.log(homeField);
+                                    console.log(awayField);
+                                    console.log(startTime);
+                                }
+                            }
+                        }
+                    }
+                }
+                console.log(homeField);
+                console.log(awayField);
+                console.log(startTime);
+                console.log(ageGlobal);
+                
+                if (homeField == 16 || homeField == 22){
+                    fieldDaddy.getElementsByClassName("home")[0].style.background= "blue";
+                }else if(homeField == 17 || homeField == 23){
+                    fieldDaddy.getElementsByClassName("home")[1].style.background= "blue";
+                }else if(homeField == 18 || homeField == 24){
+                    fieldDaddy.getElementsByClassName("home")[2].style.background= "blue";
+                }else if(homeField == 19 || homeField == 25){
+                    fieldDaddy.getElementsByClassName("home")[3].style.background= "blue";
+                }else if(homeField == 20 || homeField == 26){
+                    fieldDaddy.getElementsByClassName("home")[4].style.background= "blue";
+                }else if(homeField == 21 || homeField == 27){
+                    fieldDaddy.getElementsByClassName("home")[5].style.background= "blue";
+                }
+
+                if (awayField == 16 || awayField == 22){
+                    fieldDaddy.getElementsByClassName("away")[0].style.background= "red";
+                    fieldDaddy.getElementsByClassName("away")[1].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[2].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[3].style.background= "LightCoral";
+                }else if (awayField == 17 || awayField == 23){
+                    fieldDaddy.getElementsByClassName("away")[1].style.background= "red";
+                    fieldDaddy.getElementsByClassName("away")[2].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[3].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[4].style.background= "LightCoral";
+                }else if (awayField == 18 || awayField == 24){
+                    fieldDaddy.getElementsByClassName("away")[2].style.background= "red";
+                    fieldDaddy.getElementsByClassName("away")[3].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[4].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[5].style.background= "LightCoral";
+                }else if (awayField == 19 || awayField == 25){
+                    fieldDaddy.getElementsByClassName("away")[3].style.background= "red";
+                    fieldDaddy.getElementsByClassName("away")[4].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[5].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[0].style.background= "LightCoral";
+                }else if (awayField == 20 || awayField == 26){
+                    fieldDaddy.getElementsByClassName("away")[4].style.background= "red";
+                    fieldDaddy.getElementsByClassName("away")[5].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[0].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[1].style.background= "LightCoral";
+                }else if (awayField == 21 || awayField == 27){
+                    fieldDaddy.getElementsByClassName("away")[5].style.background= "red";
+                    fieldDaddy.getElementsByClassName("away")[0].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[1].style.background= "LightCoral";
+                    fieldDaddy.getElementsByClassName("away")[2].style.background= "LightCoral";
+                }
+
+                if (startTime == "9:15") {
+                    document.getElementById("displayTime").textContent = "Start Time: 9:15 am";
+                } else if (startTime == "10:30") {
+                    document.getElementById("displayTime").textContent = "Start Time: 10:30 am";
+                } else if (startTime == "11:45") {
+                    document.getElementById("displayTime").textContent = "Start Time: 11:45 am";
+                } else if (startTime == "1:00") {
+                    document.getElementById("displayTime").textContent = "Start Time: 1:00 pm";
+                } else if (startTime == "2:15") {
+                    document.getElementById("displayTime").textContent = "Start Time: 2:15 pm";
+                }
+            }
+
+            function resetInput() {
+                teamselector.selectedIndex = 0;
+                ageselector.selectedIndex= 0;
+                dateselector.selectedIndex= 0;
+                document.getElementById("inputgobutton").style.display ="none";
+            }
+              
+
+            function returnclick() {
+                document.getElementById("inputwrapper").style.display = "block";
+                document.getElementById("fieldhideyhole").style.display = "none";
+                const fieldDaddy = document.getElementById ("fieldhideyhole");
+                
+                homeField = 0;
+                awayField = 0;
+                startTime = 0;
+
+                document.getElementById("inputgobutton").style.display ="none";
+                document.getElementById("inputresetbutton").style.display ="none";
+
+                fieldDaddy.getElementsByClassName("away")[0].style.background= "white";
+                fieldDaddy.getElementsByClassName("away")[1].style.background= "white";
+                fieldDaddy.getElementsByClassName("away")[2].style.background= "white";
+                fieldDaddy.getElementsByClassName("away")[3].style.background= "white";
+                fieldDaddy.getElementsByClassName("away")[4].style.background= "white";
+                fieldDaddy.getElementsByClassName("away")[5].style.background= "white";
+
+                fieldDaddy.getElementsByClassName("home")[0].style.background= "white";
+                fieldDaddy.getElementsByClassName("home")[1].style.background= "white";
+                fieldDaddy.getElementsByClassName("home")[2].style.background= "white";
+                fieldDaddy.getElementsByClassName("home")[3].style.background= "white";
+                fieldDaddy.getElementsByClassName("home")[4].style.background= "white";
+                fieldDaddy.getElementsByClassName("home")[5].style.background= "white";
+
+                document.getElementById("teamselectorhide").style.display ="none";
+                document.getElementById("dateselectorhide").style.display ="none";
+
+                teamselector.selectedIndex = 0;
+                ageselector.selectedIndex= 0;
+                dateselector.selectedIndex= 0;
+            }
+
+        </script>
+    </body>
